@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SGChat - Secure Chat App</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-section">
+    <h2>🔐 Login to SGChat</h2>
+    <input id="alias" type="text" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button onclick="signup()">Sign Up</button>
+    <p id="login-status"></p>
+  </div>
+
+  <div id="chat-section" style="display:none;">
+    <h1>💬 SGChat</h1>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+      <button onclick="logout()">Logout</button>
+      <button onclick="deleteChat()">Delete Chat</button>
+      <button onclick="toggleDarkMode()" id="dark-mode-toggle">🌙 Dark Mode</button>
+    </div>
+    <div id="user-list"></div>
+    <div id="messages"></div>
+    <p id="typing"></p>
+    <input type="file" onchange="uploadFile(event)">
+    <input id="message" type="text" placeholder="Type your message..." oninput="broadcastTyping()">
+    <button onclick="send()">Send</button>
+  </div>
+
+  <script>
+    setInterval(() => {
+      location.reload();
+    }, 10000); // 5000 milliseconds = 5 seconds
+  </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gun/sea.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

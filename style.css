@@ -1,0 +1,110 @@
+:root {
+    --bg-color: #f2f4f8;
+    --text-color: #111;
+    --input-bg: #fff;
+    --input-border: #ccc;
+    --message-bg: #e6f0ff;
+  }
+
+  body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #eee;
+    --input-bg: #1f1f1f;
+    --input-border: #555;
+    --message-bg: #2c2f3a;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  #login-section, #chat-section {
+    width: 100%;
+    max-width: 450px;
+    background: var(--input-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  }
+
+  input, button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #messages {
+    max-height: 300px;
+    overflow-y: auto;
+    background: var(--input-bg);
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--input-border);
+    margin-bottom: 1rem;
+  }
+
+  .message {
+    background: var(--message-bg);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .inline-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+
+  .inline-btn:hover {
+    color: crimson;
+  }
+
+  #typing {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: gray;
+  }
+
+  .reaction-container, .seen-container {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-top: 5px;
+  }
+
+  #user-list button {
+    background-color: #28a745;
+    margin: 2px;
+  }
